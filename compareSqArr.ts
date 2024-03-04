@@ -22,11 +22,11 @@ function convertToMap(arr: number[]): Map<any, any> {
   return map;
 }
 
-function same(arr: number[], arrSq: number[]): any {
+function sameSq(arr: number[], arrSq: number[]): any {
   const map = convertToMap(arr);
   const mapSq = convertToMap(arrSq);
   const isEq = shallowCompareSqMaps(map, mapSq);
   return isEq;
 }
 
-console.log(same([3, 1, 2, 1], [1, 4, 1, 9]));
+console.log(sameSq([3, 1, 2, 1], [1, 4, 1, 9]));
