@@ -1,6 +1,6 @@
 function strCharCount(str: string): Record<string, number> {
   let charNum: Record<string, number> = {};
-  for (let i of str) {
+  for (let i of str.toLowerCase()) {
     if (charNum.hasOwnProperty(i)) {
       charNum[i]++;
     } else if (i !== " ") {
@@ -10,4 +10,4 @@ function strCharCount(str: string): Record<string, number> {
   return charNum;
 }
 
-console.log(strCharCount("hello world again"));
+console.log(strCharCount("hello world again I guess"));
