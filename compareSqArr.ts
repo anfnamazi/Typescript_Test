@@ -3,7 +3,7 @@ function shallowCompareSqMaps(map: Map<any, any>, mapSq: Map<any, any>) {
     return false;
   }
   for (let [key, val] of map) {
-    if (!mapSq.has(key**2) || mapSq.get(key**2) !== val) {
+    if (!mapSq.has(key ** 2) || mapSq.get(key ** 2) !== val) {
       return false;
     }
   }
