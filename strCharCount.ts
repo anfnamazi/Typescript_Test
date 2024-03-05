@@ -3,11 +3,11 @@ function strCharCount(str: string): Record<string, number> {
   for (let i of str) {
     if (charNum.hasOwnProperty(i)) {
       charNum[i]++;
-    } else {
+    } else if (i !== " ") {
       charNum[i] = 1;
     }
   }
   return charNum;
 }
 
-console.log(strCharCount("hello"));
+console.log(strCharCount("hello world again"));
