@@ -4,7 +4,8 @@ interface IDog {
   play: () => void;
 }
 
-class Dog implements IDog {
+class Dog implements IDog, Object {
+  __proto__: any;
   constructor(name: string) {
     this.name = name;
   }
@@ -24,5 +25,12 @@ Dog.prototype.play = () => {
   console.log("play");
 };
 
+dog1.__proto__.bark = () => {
+  console.log("woof");
+};
+
 dog1.play();
+dog2.play();
+
+dog1.bark();
 dog2.bark();
