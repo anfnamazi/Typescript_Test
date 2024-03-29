@@ -53,5 +53,7 @@ const superDog2 = Object.create(superDog);
 
 console.log(`superDog2 ${superDog2.bark()}`);
 
-console.log(Object.keys(superDog2));
-console.log(Object.keys(superDog2.__proto__));
+console.log(`Direct properties of superDog2 ${Object.keys(superDog2)}`);
+console.log(
+  `Prototype properties of superDog2 ${Object.keys(superDog2.__proto__)}`
+);
