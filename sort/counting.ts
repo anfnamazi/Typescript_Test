@@ -23,5 +23,5 @@ namespace countingSort {
     return result;
   }
 
-  console.log(countingSort([7, 3, 6, 5, 4, 9, 3, 5, 2, 1]));
+  console.log(countingSort([7, -1, 3, 6, 5, 4, -5, -1, 9, 3, 5, 2, 1]));
 }
