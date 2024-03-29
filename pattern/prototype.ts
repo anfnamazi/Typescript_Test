@@ -11,10 +11,10 @@ class Dog implements IDog, Object {
   }
   name: string;
   bark() {
-    console.log("barking");
+    return "barking";
   }
   play() {
-    console.log("playing");
+    return "playing";
   }
 }
 
@@ -24,7 +24,7 @@ class SuperDog extends Dog {
   }
 
   fly() {
-    console.log("flying");
+    return "flying";
   }
 }
 
@@ -34,24 +34,24 @@ const dog2 = new Dog("petty");
 const superDog = new SuperDog("mega jesse");
 
 Dog.prototype.play = () => {
-  console.log("running");
+  return "running";
 };
 
 dog1.__proto__.bark = () => {
-  console.log("woof");
+  return "woof";
 };
 
-dog1.play();
-dog2.play();
-superDog.play();
+console.log(`dog1 ${dog1.play()}`);
+console.log(`dog2 ${dog2.play()}`);
+console.log(`superDog ${superDog.play()}`);
 
-dog1.bark();
-dog2.bark();
-superDog.bark();
+console.log(`dog1 ${dog1.bark()}`);
+console.log(`dog2 ${dog2.bark()}`);
+console.log(`superDog ${superDog.bark()}`);
 
 const superDog2 = Object.create(superDog);
 
-superDog2.bark();
+console.log(`superDog2 ${superDog2.bark()}`);
 
 console.log(Object.keys(superDog2));
 console.log(Object.keys(superDog2.__proto__));
