@@ -48,3 +48,10 @@ superDog.play();
 dog1.bark();
 dog2.bark();
 superDog.bark();
+
+const superDog2 = Object.create(superDog);
+
+superDog2.bark();
+
+console.log(Object.keys(superDog2));
+console.log(Object.keys(superDog2.__proto__));
