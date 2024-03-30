@@ -32,7 +32,7 @@ namespace heapSort {
 
     // create max heap from array
     for (let i = (arr.length >> 1) - 1; i >= 0; i--) {
-      maxHeapify(arr, i);
+      maxHeapify<T>(arr, i);
     }
 
     // swap maximum value of the array to the end
@@ -43,7 +43,7 @@ namespace heapSort {
     // remove sorted section
     let maxValue = arr.pop();
 
-    return heapSort(arr).concat(maxValue);
+    return heapSort<T>(arr).concat(maxValue);
   }
 
   console.log(heapSort<number>([9, 8, 7, 6, 5, 4, 3, 2, 1]));
