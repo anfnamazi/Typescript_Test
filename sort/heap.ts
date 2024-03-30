@@ -1,5 +1,5 @@
 namespace heapSort {
-  function maxHeapify(arr: number[], i: number): number[] {
+  function maxHeapify<T>(arr: T[], i: number): T[] {
     let largest = i;
     let left = 2 * i + 1;
     let right = 2 * i + 2;
@@ -25,7 +25,7 @@ namespace heapSort {
     return arr;
   }
 
-  export function heapSort(arr: number[]): number[] {
+  export function heapSort<T>(arr: T[]): T[] {
     if (arr.length <= 1) {
       return arr;
     }
@@ -43,8 +43,9 @@ namespace heapSort {
     // remove sorted section
     let maxValue = arr.pop();
 
-    return heapSort(arr).concat(maxValue as number);
+    return heapSort(arr).concat(maxValue);
   }
 
-  console.log(heapSort([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+  console.log(heapSort<number>([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+  console.log(heapSort<string>(["f", "e", "d", "c", "a"]));
 }
