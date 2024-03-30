@@ -1,5 +1,5 @@
 namespace shellSort {
-  function shellSort(arr: number[]): number[] {
+  function shellSort<T>(arr: T[]): T[] {
     for (let gap = arr.length >> 1; gap > 0; gap = gap >> 1) {
       for (let i = gap; i < arr.length; i++) {
         let j = i;
@@ -16,6 +16,6 @@ namespace shellSort {
     return arr;
   }
 
-  const sorted = shellSort([9, 8, 7, 6, 5, 4, 3, 2, 1]);
-  console.log(sorted);
+  console.log(shellSort<number>([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+  console.log(shellSort<string>(["f", "e", "d", "c", "a"]));
 }
