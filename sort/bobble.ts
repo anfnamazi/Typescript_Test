@@ -13,7 +13,7 @@ namespace bobbleSort {
     }
     const last = arr.pop();
 
-    return bobbleSort(arr).concat(last);
+    return bobbleSort<T>(arr).concat(last as T);
   }
 
   console.log(bobbleSort<number>([7, 5, 4, 3, 2, -3, 0]));

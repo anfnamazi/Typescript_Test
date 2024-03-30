@@ -43,7 +43,7 @@ namespace heapSort {
     // remove sorted section
     let maxValue = arr.pop();
 
-    return heapSort<T>(arr).concat(maxValue);
+    return heapSort<T>(arr).concat(maxValue as T);
   }
 
   console.log(heapSort<number>([9, 8, 7, 6, 5, 4, 3, 2, 1]));
