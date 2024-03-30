@@ -19,7 +19,7 @@ namespace heapSort {
       arr[largest] = temp;
 
       //recursive
-      maxHeapify(arr, largest);
+      maxHeapify<T>(arr, largest);
     }
 
     return arr;
