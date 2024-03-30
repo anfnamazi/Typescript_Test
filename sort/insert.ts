@@ -1,5 +1,5 @@
 namespace insertSort {
-  function insertSort(arr: number[]): number[] {
+  function insertSort<T>(arr: T[]): T[] {
     for (let i = 1; i < arr.length; i++) {
       let j = i;
       while (j > 0) {
@@ -13,6 +13,7 @@ namespace insertSort {
     }
     return arr;
   }
-  const sorted = insertSort([6, 5, 4, 3, 2, 1]);
-  console.log(sorted);
+
+  console.log(insertSort<number>([6, 5, 4, 3, 2, 1]));
+  console.log(insertSort<string>(["f", "e", "d", "c", "a"]));
 }
