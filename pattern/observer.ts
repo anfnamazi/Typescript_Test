@@ -1,19 +1,19 @@
 namespace observer {
   interface IDog {
     name: string;
-    bark: string;
+    bark: string | undefined;
     setBark: (value: string) => void;
   }
   let dog1: IDog = {
     name: "jesse",
-    bark: "barking",
+    bark: undefined,
     setBark(bark: string) {
       this.bark = bark;
     },
   };
   let dog2: IDog = {
     name: "petty",
-    bark: "barking",
+    bark: undefined,
     setBark(bark: string) {
       this.bark = bark;
     },
@@ -27,12 +27,18 @@ namespace observer {
     broadcast(newBark: string): void {
       this.list.forEach((dog) => dog.setBark(newBark));
     }
+    remove(dog: IDog): void {
+      const index = this.list.indexOf(dog);
+      this.list.splice(index, 1);
+    }
   }
 
   const broadcast = new Broadcaster();
 
   broadcast.add(dog1);
   broadcast.add(dog2);
+
+  broadcast.remove(dog1);
 
   broadcast.broadcast("woof");
 
