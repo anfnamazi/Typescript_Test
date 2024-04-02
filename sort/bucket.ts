@@ -33,5 +33,5 @@ namespace bucketSort {
     return result.concat(...bucket);
   }
 
-  console.log(JSON.stringify(bucketSort([9, 8, 7, 5, 2, 6, 5, 4, 3, 2, 1])));
+  console.log(bucketSort([9, 8, 7, 5, 2, 6, 5, 4, 3, 2, 1]));
 }
