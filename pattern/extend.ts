@@ -10,9 +10,9 @@ namespace extend {
       return "eating";
     }
 
-    sleep() {
+    sleep = function () {
       return "sleeping";
-    }
+    };
   }
 
   class Dog extends Animal {
@@ -20,6 +20,9 @@ namespace extend {
       super(name);
     }
     bark() {
+      super.eat();
+      // super.sleep(); not working because not method
+      // super.name; not working because not method
       return "woof";
     }
   }
