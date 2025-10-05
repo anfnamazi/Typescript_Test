@@ -1,46 +1,47 @@
 namespace observer {
-  interface IDog {
-    name: string;
-    bark: string | undefined;
-    setBark: (value: string) => void;
+  interface IObserver {
+    update(tempature: number): void;
   }
-  let dog1: IDog = {
-    name: "jesse",
-    bark: undefined,
-    setBark(bark: string) {
-      this.bark = bark;
-    },
-  };
-  let dog2: IDog = {
-    name: "petty",
-    bark: undefined,
-    setBark(bark: string) {
-      this.bark = bark;
-    },
-  };
 
-  class Broadcaster {
-    list: IDog[] = [];
-    add(dog: IDog): void {
-      this.list.push(dog);
+  class WeatherStation {
+    observers: IObserver[] = [];
+    tempature: number = 0;
+
+    add(observer: IObserver): void {
+      this.observers.push(observer);
     }
-    broadcast(newBark: string): void {
-      this.list.forEach((dog) => dog.setBark(newBark));
+
+    remove(observer: IObserver): void {
+      this.observers = this.observers.filter((obs) => obs !== observer);
     }
-    remove(dog: IDog): void {
-      const index = this.list.indexOf(dog);
-      this.list.splice(index, 1);
+
+    notify(tempature: number): void {
+      this.observers.forEach((observer) => observer.update(tempature));
     }
   }
 
-  const broadcast = new Broadcaster();
+  const station = new WeatherStation();
 
-  broadcast.add(dog1);
-  broadcast.add(dog2);
+  class TempatureDisplay implements IObserver {
+    update(tempature: number): void {
+      console.log(`Tempature Display: ${tempature}`);
+    }
+  }
 
-  broadcast.remove(dog1);
+  class TempatureAlert implements IObserver {
+    update(tempature: number): void {
+      if (tempature > 30) {
+        console.log("Tempature Alert: It's too hot!");
+      }
+    }
+  }
 
-  broadcast.broadcast("woof");
+  const display = new TempatureDisplay();
+  const alert = new TempatureAlert();
 
-  console.log(dog1, dog2);
+  station.add(display);
+  station.add(alert);
+
+  station.notify(25); // Tempature Display: 25
+  station.notify(35); // Tempature Display: 35, Tempature Alert: It's too hot!
 }
