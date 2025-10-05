@@ -1,37 +1,47 @@
 class State {
-  toggle(light: Light): State {
+  toggle(light: Light) {
     throw new Error("Method 'toggle()' must be implemented.");
   }
 }
 
 class OnState extends State {
-  toggle() {
+  toggle(light: Light) {
     console.log("Switching to Off State");
-    return new OffState();
+    light.setState(new OffState());
   }
 }
 
 class OffState extends State {
-  toggle() {
+  toggle(light: Light) {
     console.log("Switching to On State");
-    return new OnState();
+    light.setState(new OnState());
   }
 }
 
 class Light {
-  private state: State;
+  state: State;
 
   constructor() {
     this.state = new OffState();
   }
 
-  public press() {
-    this.state = this.state.toggle(this);
+  setState(state: State) {
+    this.state = state;
+  }
+
+  public toggle() {
+    this.state.toggle(this);
   }
 }
 
 // Usage
 const light = new Light();
-light.press(); // Switching to On State
-light.press(); // Switching to Off State
-light.press(); // Switching to On State
+console.log(light.state);
+
+light.toggle(); // Switching to On State
+console.log(light.state);
+
+light.toggle(); // Switching to Off State
+console.log(light.state);
+
+light.toggle(); // Switching to On State
