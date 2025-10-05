@@ -1,3 +1,10 @@
+/*
+### Benefits
+- Encapsulation: Each state handles its own behavior.
+- Open/Closed Principle: Easy to add new states without modifying existing code.
+- Cleaner Code: Avoids messy conditionals.
+*/
+
 namespace state {
   class State {
     toggle(light: Light) {
