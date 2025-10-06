@@ -1,4 +1,7 @@
 /**
+ * ### Core Idea
+ * Instead of building a new object manually, you clone an existing one. This is done via a clone() method or similar mechanism.
+ *
  * ### Benefits
  * Performance: Avoids expensive object creation.
  * Flexibility: Easily create variations of existing objects.

@@ -1,9 +1,14 @@
-/*
+/**
+ * ### Core Concept
+ * Subject: Maintains a list of observers and notifies them of changes.
+ * Observer: Defines an interface for receiving updates.
+ * Concrete Observers: Implement the update logic.
+ *
  * ### Benefits
  * Loose coupling: Observers don’t need to know about each other.
  * Scalability: Easy to add/remove observers.
  * Flexibility: Works well for event systems, UI frameworks, and reactive programming.
-*/
+ */
 
 namespace observerDP {
   interface IObserver {

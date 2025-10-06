@@ -1,4 +1,8 @@
 /**
+ * ### Core Concept
+ * Restrict instantiation of a class to a single object.
+ * Provide a static method to access that instance.
+ *
  * ### Benefits
  * Controlled access: Only one instance exists.
  * Global state: Useful for shared resources.

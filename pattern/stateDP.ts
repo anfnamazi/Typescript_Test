@@ -1,9 +1,12 @@
-/*
+/**
+ * ### Core Concept
+ * Instead of using conditionals to determine behavior, you encapsulate each state in its own class (or object), and delegate behavior to the current state.
+ *
  * ### Benefits
  * Encapsulation: Each state handles its own behavior.
  * Open/Closed Principle: Easy to add new states without modifying existing code.
  * Cleaner Code: Avoids messy conditionals.
-*/
+ */
 
 namespace stateDP {
   class State {

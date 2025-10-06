@@ -1,9 +1,12 @@
-/*
+/**
+ * ### Core Concept
+ * Instead of hardcoding logic with if or switch, you create a chain of objects that can handle a request. Each object in the chain has a reference to the next one.
+ *
  * ### Benefits
  * Decouples sender and receiver of requests.
  * Flexible: You can change the chain dynamically.
  * Extensible: Add new handlers without modifying existing ones.
-*/
+ */
 
 namespace chaninOfResponsibilityDP {
   interface IHandler {
