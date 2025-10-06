@@ -1,11 +1,11 @@
 /*
-### Benefits
-- Loose coupling: Observers don’t need to know about each other.
-- Scalability: Easy to add/remove observers.
-- Flexibility: Works well for event systems, UI frameworks, and reactive programming.
+ * ### Benefits
+ * Loose coupling: Observers don’t need to know about each other.
+ * Scalability: Easy to add/remove observers.
+ * Flexibility: Works well for event systems, UI frameworks, and reactive programming.
 */
 
-namespace observer {
+namespace observerDP {
   interface IObserver {
     update(tempature: number): void;
   }

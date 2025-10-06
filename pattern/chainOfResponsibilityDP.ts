@@ -1,11 +1,11 @@
 /*
-### Benefits
-- Decouples sender and receiver of requests.
-- Flexible: You can change the chain dynamically.
-- Extensible: Add new handlers without modifying existing ones.
+ * ### Benefits
+ * Decouples sender and receiver of requests.
+ * Flexible: You can change the chain dynamically.
+ * Extensible: Add new handlers without modifying existing ones.
 */
 
-namespace chaninOfResponsibility {
+namespace chaninOfResponsibilityDP {
   interface IHandler {
     setNext(handler: IHandler): void;
     handle(request: string): void;

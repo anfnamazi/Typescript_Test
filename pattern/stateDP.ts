@@ -1,11 +1,11 @@
 /*
-### Benefits
-- Encapsulation: Each state handles its own behavior.
-- Open/Closed Principle: Easy to add new states without modifying existing code.
-- Cleaner Code: Avoids messy conditionals.
+ * ### Benefits
+ * Encapsulation: Each state handles its own behavior.
+ * Open/Closed Principle: Easy to add new states without modifying existing code.
+ * Cleaner Code: Avoids messy conditionals.
 */
 
-namespace state {
+namespace stateDP {
   class State {
     toggle(light: Light) {
       throw new Error("Method 'toggle()' must be implemented.");
