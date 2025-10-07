@@ -1,3 +1,15 @@
+/**
+ * ### Core Concepts
+ * Context: The object that uses a strategy.
+ * Strategy Interface: Defines a common interface for all supported algorithms.
+ * Concrete Strategies: Implement different variations of the algorithm.
+ *
+ * ### Benefits
+ * Flexibility: Easily switch strategies at runtime.
+ * Open/Closed Principle: Add new strategies without modifying existing code.
+ * Decoupling: Keeps business logic separate from implementation details.
+ */
+
 namespace strategyDP {
   interface IPaymentStrategy {
     pay(amount: number): void;
