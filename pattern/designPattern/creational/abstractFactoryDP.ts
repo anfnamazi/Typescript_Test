@@ -2,6 +2,13 @@
  * ### Core Concept
  * Instead of instantiating objects directly, you use a factory that produces related objects. Each factory corresponds to a specific family of products.
  *
+ * ### Key components
+ * AbstractFactory: Declares a set of methods for creating abstract products.
+ * ConcreteFactory: Implements the creation methods for a specific variant of products.
+ * AbstractProduct: Declares an interface for a type of product.
+ * ConcreteProduct: Implements the abstract product interface.
+ * Client: Uses only the interfaces declared by AbstractFactory and AbstractProduct.
+ *
  * ### Benefits
  * Encapsulation: Groups related object creation.
  * Consistency: Ensures compatible objects are used together.

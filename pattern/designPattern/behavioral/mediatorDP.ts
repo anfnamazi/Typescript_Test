@@ -2,6 +2,11 @@
  * ### Core Concepts
  * Imagine a group of colleagues in an office. Instead of everyone shouting across the room, they communicate through a manager (the mediator). This keeps things organized and reduces chaos.
  *
+ * ### Key components
+ * Mediator Interface: Declares communication methods.
+ * Concrete Mediator: Implements coordination logic.
+ * Colleague Components: Communicate via the mediator.
+ *
  * ### Benefits
  * Decouples components: Reduces dependencies between objects.
  * Centralized control: Easier to manage complex interactions.
