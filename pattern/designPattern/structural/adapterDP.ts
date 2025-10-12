@@ -18,11 +18,11 @@ namespace adapterDP {
     }
   }
 
-  interface CelsiusSensor {
+  interface ICelsiusSensor {
     getTemperatureInCelsius(): number;
   }
 
-  class TemperatureAdapter implements CelsiusSensor {
+  class TemperatureAdapter implements ICelsiusSensor {
     constructor(private readonly sensor: FahrenheitSensor) {}
 
     getTemperatureInCelsius(): number {

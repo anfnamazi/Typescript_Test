@@ -9,11 +9,11 @@
  */
 
 namespace protoTypeDP {
-  interface Prototype {
-    clone(): Prototype;
+  interface IPrototype {
+    clone(): IPrototype;
   }
 
-  class Circle implements Prototype {
+  class Circle implements IPrototype {
     constructor(public radius: number, public color: string) {}
 
     clone() {

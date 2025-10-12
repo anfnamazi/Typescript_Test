@@ -14,22 +14,22 @@
  */
 
 namespace iteratorDP {
-  interface Iterator<T> {
+  interface IIterator<T> {
     next(): { value: T | null; done: boolean };
   }
 
-  interface IterableCollection<T> {
-    createIterator(): Iterator<T>;
+  interface IIterableCollection<T> {
+    createIterator(): IIterator<T>;
   }
 
-  class WordCollection implements IterableCollection<string> {
+  class WordCollection implements IIterableCollection<string> {
     private items: string[] = [];
 
     addItem(item: string) {
       this.items.push(item);
     }
 
-    createIterator(): Iterator<string> {
+    createIterator(): IIterator<string> {
       return new AlphabeticalOrderIterator(this);
     }
 
@@ -38,7 +38,7 @@ namespace iteratorDP {
     }
   }
 
-  class AlphabeticalOrderIterator implements Iterator<string> {
+  class AlphabeticalOrderIterator implements IIterator<string> {
     private position: number = 0;
     private sortedItems: string[];
 
