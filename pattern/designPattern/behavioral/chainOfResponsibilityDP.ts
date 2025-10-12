@@ -8,7 +8,7 @@
  * Extensible: Add new handlers without modifying existing ones.
  */
 
-namespace chaninOfResponsibilityDP {
+namespace chainOfResponsibilityDP {
   interface IHandler {
     setNext(handler: IHandler): void;
     handle(request: string): void;
