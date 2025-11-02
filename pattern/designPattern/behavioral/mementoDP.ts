@@ -1,4 +1,7 @@
 /**
+ * ### Definition
+ * The Memento Design Pattern is a behavioral design pattern that allows an object to save and restore its state without exposing its internal structure. It's especially useful for implementing undo/redo functionality.
+ *
  * ### Core Concepts
  * Originator: The object whose state needs to be saved/restored.
  * Memento: A snapshot of the Originator’s state.
