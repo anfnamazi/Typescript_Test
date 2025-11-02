@@ -12,12 +12,12 @@
 
 namespace observerDP {
   interface IObserver {
-    update(tempature: number): void;
+    update(temperature: number): void;
   }
 
   class WeatherStation {
     observers: IObserver[] = [];
-    tempature: number = 0;
+    temperature: number = 0;
 
     add(observer: IObserver): void {
       this.observers.push(observer);
@@ -27,33 +27,33 @@ namespace observerDP {
       this.observers = this.observers.filter((obs) => obs !== observer);
     }
 
-    notify(tempature: number): void {
-      this.observers.forEach((observer) => observer.update(tempature));
+    notify(temperature: number): void {
+      this.observers.forEach((observer) => observer.update(temperature));
     }
   }
 
   const station = new WeatherStation();
 
-  class TempatureDisplay implements IObserver {
-    update(tempature: number): void {
-      console.log(`Tempature Display: ${tempature}`);
+  class TemperatureDisplay implements IObserver {
+    update(temperature: number): void {
+      console.log(`Temperature Display: ${temperature}`);
     }
   }
 
-  class TempatureAlert implements IObserver {
-    update(tempature: number): void {
-      if (tempature > 30) {
-        console.log("Tempature Alert: It's too hot!");
+  class TemperatureAlert implements IObserver {
+    update(temperature: number): void {
+      if (temperature > 30) {
+        console.log("Temperature Alert: It's too hot!");
       }
     }
   }
 
-  const display = new TempatureDisplay();
-  const alert = new TempatureAlert();
+  const display = new TemperatureDisplay();
+  const alert = new TemperatureAlert();
 
   station.add(display);
   station.add(alert);
 
-  station.notify(25); // Tempature Display: 25
-  station.notify(35); // Tempature Display: 35, Tempature Alert: It's too hot!
+  station.notify(25); // Temperature Display: 25
+  station.notify(35); // Temperature Display: 35, Temperature Alert: It's too hot!
 }
